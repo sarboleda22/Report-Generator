@@ -65,4 +65,5 @@ GET  `/slides/`: returns a list of all the slides in the following format:
 GET `/slides/<object_id>`: returns the HTML rendering of the slides using the [reveal-js](http://lab.hakim.se/reveal-js/#/fragments) library. If the `accept` header is set to `application/pdf`, then the endpoint will return a PDF version of the slides!
 
 
+DELETE  `/slides/<object_id>`: deletes the slides with object_id equal to the supplied one
   
