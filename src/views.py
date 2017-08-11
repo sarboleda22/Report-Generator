@@ -23,12 +23,12 @@ class RestSlides(Resource):
 		#Use table 'slides'
 		__tablename__ = 'slides'
 
-		name = request.form['yourname']
-		content = request.form['youremail']
+		name = request.form['name']
+		content = request.form['content']
 		new_slide = Slide(name, content)
 		db.session.add(new_slide)
 		db.session.commit()
-		return 'New Slide Created | nombre : {} | content : {}'.format(name, content)
+		return 'New Slide Created | name : {} | content : {}'.format(name, content)
 
 #IN PROGRESS. THIS IS JUST A DUMMY FUNCTION.
 @app.route('/slides/<slide_id>')

@@ -17,7 +17,7 @@ GET  `/slides/`: returns a list of all the slides in the following format:
 ```
 {
   "count": 10,
-  "results": {
+  "results": [
     {
       "name": "name",
       "object_id": "uuid"
@@ -58,7 +58,7 @@ GET  `/slides/`: returns a list of all the slides in the following format:
       "name": "name",
       "object_id": "uuid"
     }
-  }
+  ]
 }
 ```
 
