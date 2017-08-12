@@ -68,7 +68,7 @@ GET `/slides/<object_id>`: returns the HTML rendering of the slides using the [r
 DELETE  `/slides/<object_id>`: deletes the slides with object_id equal to the supplied one
 
 
-##DATABASE CONFIG
+## DATABASE CONFIG
 The database used is PostgreSQL, with SQLAlchemy as the ORM. Instructions for setting up the database:
 Install PostgreSQL in your system:
 ```
