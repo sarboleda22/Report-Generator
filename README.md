@@ -66,4 +66,29 @@ GET `/slides/<object_id>`: returns the HTML rendering of the slides using the [r
 
 
 DELETE  `/slides/<object_id>`: deletes the slides with object_id equal to the supplied one
-  
+
+
+##DATABASE CONFIG
+The database used is PostgreSQL, with SQLAlchemy as the ORM. Instructions for setting up the database:
+Install PostgreSQL in your system:
+```
+$ sudo apt-get update
+$ sudo apt-get install postgresql postgresql-contrib
+```  
+To make sure it is running:
+```
+$ sudo service postgresql start
+```
+
+Next, we will create a database and grant access to a new user:
+```
+$ sudo su - postgresql  #log into CLI
+$ psql 
+postgres=# CREATE USER new_user WITH PASSWORD 'password'; #Create a new user with it's password. DON'T FORGET TO END COMMAND WITH (;)
+postgres=# CREATE DATABASE new_database;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE 'new_database' TO new_user;   #grant privileges to user 
+postgres=# \q   #exit
+```
+Remember all this configurations, as you will need them to connect with it.
+
+

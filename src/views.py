@@ -39,7 +39,6 @@ class DeleteSlide(Resource):
 		db.session.commit() #Commit the deletion
 		return 'Slide {} with ID {} has been successfuly deleted'.format(del_name, del_id)
 
-
 #IN PROGRESS. THIS IS JUST A DUMMY FUNCTION.
 @app.route('/slides/<slide_id>')
 def presentation(slide_id):
