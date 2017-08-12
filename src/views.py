@@ -46,3 +46,4 @@ def presentation(slide_id):
 
 #Run the API in .../slides/
 api.add_resource(RestSlides, '/slides/')
+api.add_resource(DeleteSlide, '/slides/<object_id>')
