@@ -30,6 +30,16 @@ class RestSlides(Resource):
 		db.session.commit()
 		return 'New Slide Created | name : {} | content : {}'.format(name, content)
 
+class DeleteSlide(Resource):
+	def delete(self, object_id):
+		a = Slide.query.get(object_id) #Search for object in the database with id:object_id
+		del_name = a.name
+		del_id = a.object_id
+		db.session.delete(a) #Deleted the object
+		db.session.commit() #Commit the deletion
+		return 'Slide {} with ID {} has been successfuly deleted'.format(del_name, del_id)
+
+
 #IN PROGRESS. THIS IS JUST A DUMMY FUNCTION.
 @app.route('/slides/<slide_id>')
 def presentation(slide_id):
