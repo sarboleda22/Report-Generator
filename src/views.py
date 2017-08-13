@@ -40,9 +40,12 @@ class DeleteSlide(Resource):
 		return 'Slide {} with ID {} has been successfuly deleted'.format(del_name, del_id)
 
 #IN PROGRESS. THIS IS JUST A DUMMY FUNCTION.
-@app.route('/slides/<slide_id>')
+@app.route('/slides/<slide_id>', method=['GET'])
 def presentation(slide_id):
-	return 'this is the slide {}'.format(slide_id)
+	obj = Slide.query.get(object_id)
+	content = obj.content
+	return render_template('main.html', content=content)
+
 
 #Run the API in .../slides/
 api.add_resource(RestSlides, '/slides/')
