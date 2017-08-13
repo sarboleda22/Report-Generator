@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Terrene - Report</title>
+
+		<link rel="stylesheet" href="{{url_for('static', filename='css/reveal.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/theme/black.css')}}" id="theme">
+
+        <link rel="stylesheet" href="{{url_for('static', filename='lib/css/zenburn.css')}}">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        {{ content }}  <!-- content loaded by the database -->
+                    </script>
+                </section>
+
+            </div>
+		</div>
+
+		<script src="{{url_for('static', filename='lib/js/head.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/reveal.js')}}"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '{{url_for('static', filename='lib/js/classList.js')}}', condition: function() { return !document.body.classList; } },
+					{ src: '{{url_for('static', filename='plugin/markdown/marked.js')}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '{{url_for('static', filename='plugin/markdown/markdown.js')}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '{{url_for('static', filename='plugin/highlight/highlight.js')}}', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '{{url_for('static', filename='plugin/notes/notes.js')}}' }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
