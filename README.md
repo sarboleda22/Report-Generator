@@ -90,5 +90,6 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE 'new_database' TO new_user;   #grant
 postgres=# \q   #exit
 ```
 Remember all this configurations, as you will need them to connect with it.
+*If testing locally, always remember to start running the database*
 
 
