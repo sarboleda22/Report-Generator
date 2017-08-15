@@ -20,7 +20,7 @@ db_info = {
 """
 from secrets import *
 
-#Defining the URI of the db with the info given before. In this example, it is running on a localhost
+#Defining the URI of the db with the info given before. In this example, it is running on a localhost. 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{}:{}@{}/{}'.format(db_info['username'], db_info['password'], db_info['host'], db_info['db_name'])
 
 #Initializing the db object
